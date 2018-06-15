@@ -230,7 +230,7 @@ function newpoints_awards_destroy_commit()
     global $mybb, $lang, $message;
     if ($mybb->input['destroy'] == 1) {
         if (!is_writable(__FILE__)) {
-            flash_message();
+            $message .= '<br/>' . $lang->newpoints_awards_destroy_error;
         } else {
             $files = newpoints_awards_files();
             foreach ($files as $file) {

@@ -54,7 +54,7 @@ $l['newpoints_awards_site'] = 'http://www.chack1172.altervista.org/Projects/MyBB
 $l['newpoints_awards_authorsite'] = 'http://en.chack1172.altervista.org';
 $l['newpoints_awards_destroy'] = 'Delete Plugin';
 $l['newpoints_awards_destroy_confirm'] = 'Are you sure you wish to uninstall this plugin and delete its files?';
-$l['newpoints_awards_destroy_error'] = 'There was an error deleting the plugin. Please, check file permissions and try again.';
+$l['newpoints_awards_destroy_error'] = 'There was an error deleting plugin\'s files. Please, check file permissions and try again.';
 $l['newpoints_awards_destroyed'] = ' All its files have been deleted.';
 
 $l['newpoints_awards_canmanage'] = 'Can manage awards prices?';
