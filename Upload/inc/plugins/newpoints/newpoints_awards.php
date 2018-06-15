@@ -44,10 +44,13 @@ function newpoints_awards_destroy_url($post_code = false)
 function newpoints_awards_info()
 {
     global $lang;
-    $destroy = newpoints_awards_destroy_url(true);
-    $code = '<div style="float: right; width: 150px; text-align: center; font-weight: bold">';
-    $code .= '<a href="'.$destroy.'" style="color: red">'.$lang->newpoints_awards_destroy.'</a>';
-    $code .= '</div>';
+    $code = '';
+    if (is_writable(__FILE__)) {
+        $destroy = newpoints_awards_destroy_url(true);
+        $code = '<div style="float: right; width: 150px; text-align: center; font-weight: bold">';
+        $code .= '<a href="'.$destroy.'" style="color: red">'.$lang->newpoints_awards_destroy.'</a>';
+        $code .= '</div>';
+    }
     return [
         'name'          => $lang->newpoints_awards_name,
         'description'   => $lang->newpoints_awards_description.$code,
@@ -226,11 +229,15 @@ function newpoints_awards_destroy_commit()
 {
     global $mybb, $lang, $message;
     if ($mybb->input['destroy'] == 1) {
-        $files = newpoints_awards_files();
-        foreach ($files as $file) {
-            newpoints_awards_remove($file);
+        if (!is_writable(__FILE__)) {
+            flash_message();
+        } else {
+            $files = newpoints_awards_files();
+            foreach ($files as $file) {
+                newpoints_awards_remove($file);
+            }
+            $message .= $lang->newpoints_awards_destroyed;
         }
-        $message .= $lang->newpoints_awards_destroyed;
     }
 }
 
