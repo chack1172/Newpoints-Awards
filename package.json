@@ -1,0 +1,39 @@
+{
+  "name": "@chack1172/mybb-newpoints-awards",
+  "version": "1.0.0",
+  "description": "Allows to buy OGUC awards with newpoints.",
+  "private": true,
+  "scripts": {
+    "clear:mybb": "node watch-mybb --clean",
+    "start": "npm-run-all --parallel start:server mybb:config",
+    "start:server": "php -S localhost:8000 -t mybb/",
+    "start:watch": "npm-run-all --parallel watch start",
+    "mybb:config": "node mybb-config",
+    "watch": "node watch-mybb --watch",
+    "watch:config": "nodemon --watch mybb/inc/settings.php -x \"node mybb-config\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chack1172/Newpoints-Awards.git"
+  },
+  "keywords": [
+    "mybb",
+    "newpoints",
+    "ougc-awards",
+    "awards",
+    "buy-awards"
+  ],
+  "author": {
+    "name": "chack1172",
+    "email": "chack1172@gmail.com",
+    "url": "https://www.chack1172.altervista.org"
+  },
+  "license": "CC-BY-NC-4.0",
+  "bugs": {
+    "url": "https://github.com/chack1172/Newpoints-Awards/issues"
+  },
+  "devDependencies": {
+    "copy-and-watch": "^0.1.6",
+    "npm-run-all": "^4.1.5"
+  }
+}
