@@ -7,8 +7,10 @@ require('colors');
 const target = "mybb";
 // Paths to copy and watch
 const paths = [
-    "src/**/*"
-];
+    "src/",
+    "packages/OUGC-Awards/Upload/",
+    "packages/newpoints/Upload/"
+].map(path => path + "**/*");
 
 const options = {};
 ['clean'].forEach(key => {

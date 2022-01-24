@@ -1,0 +1,6 @@
+[submodule "packages/OUGC-Awards"]
+	path = packages/OUGC-Awards
+	url = https://github.com/Sama34/OUGC-Awards.git
+[submodule "packages/newpoints"]
+	path = packages/newpoints
+	url = https://github.com/DiogoParrinha/newpoints.git
